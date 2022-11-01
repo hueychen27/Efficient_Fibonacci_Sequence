@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fibonacci Sequence</title>
+</head>
+
+<body>
+	<script>
+		function main() {
+			var num;
+			function ask() {
+				num = prompt("Emter number of terms: ");
+				if (typeof Number(num) != "number") {
+					ask();
+				}
+			}
+
+			ask();
+
+			function binet(n) {
+				return Math.round(
+					(Math.pow((1 + Math.sqrt(5)) / 2, n) - Math.pow((1 - Math.sqrt(5)) / 2, n)) /
+						Math.sqrt(5)
+				);
+			}
+
+			alert(
+				"Output:" +
+					String(binet(parseInt(num))) +
+					" Your number: " +
+					String(parseInt(num))
+			);
+			let continuePrompt = prompt("Do you want to continue. y/n");
+			if (continuePrompt == "y" || continuePrompt == "yes") {
+				main();
+			}
+		}
+
+		main();
+	</script>
+</body>
+
+</html>
